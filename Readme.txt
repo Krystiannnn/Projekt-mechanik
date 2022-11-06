@@ -4,7 +4,9 @@ Projekt mechanik
 1.Responsywność strony zapewni bootstrap, w nawigacji górnej będzie link logowania i link do rejestracji.
 
 2.Plik index.php będzie dostępny dla wszystkich natomiast wolne terminy zapisu na naprawę pojawią się
-dopiero po zalogowaniu w pliku klient.php
+dopiero po zalogowaniu w pliku klient.php 
+Login testowy - adam
+Hasło testowe - qwertyuiop
 
 3.Plik rejestracja.php zrobi walidację i przeniesię do pliku witamy.php
 
