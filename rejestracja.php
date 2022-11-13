@@ -91,7 +91,7 @@
 			else
 			{
 				//Czy email już istnieje?
-				$rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE email='$email'");
+				$rezultat = $polaczenie->query("SELECT id FROM patient WHERE email='$email'");
 				
 				if (!$rezultat) throw new Exception($polaczenie->error);
 				
@@ -103,7 +103,7 @@
 				}		
 
 				//Czy nick jest już zarezerwowany?
-				$rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE user='$nick'");
+				$rezultat = $polaczenie->query("SELECT id FROM patient WHERE user='$nick'");
 				
 				if (!$rezultat) throw new Exception($polaczenie->error);
 				
@@ -118,7 +118,7 @@
 				{
 					//Hurra, wszystkie testy zaliczone, dodajemy gracza do bazy
 					
-					if ($polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$nick', '$haslo_hash', '$email')"))
+					if ($polaczenie->query("INSERT INTO patient VALUES (NULL, '$nick', '$haslo_hash', '$email')"))
 					{
 						$_SESSION['udanarejestracja']=true;
 						header('Location: witamy.php');

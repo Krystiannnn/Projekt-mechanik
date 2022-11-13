@@ -23,7 +23,7 @@
 		$login = htmlentities($login, ENT_QUOTES, "UTF-8");
 	
 		if ($rezultat = @$polaczenie->query(
-		sprintf("SELECT * FROM uzytkownicy WHERE user='%s'",
+		sprintf("SELECT * FROM patient WHERE user='%s'",
 		mysqli_real_escape_string($polaczenie,$login))))
 		{
 			$ilu_userow = $rezultat->num_rows;

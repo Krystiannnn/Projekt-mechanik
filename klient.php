@@ -21,7 +21,7 @@
 <body>
     <?php
      echo "<p>Witaj ".$_SESSION['user'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
-     
+     echo "<a href='viewAppointments.php'>Moje konto</a><br>";
 
         require_once('connect.php');
 
@@ -47,6 +47,7 @@
                 $staffId = $staff['id'];
                 $firstName = $staff['firstName'];
                 $lastName = $staff['lastName'];
+                echo "<br>";
                 echo "tuning  $firstName $lastName<br>";
                 //przygotuj nową kwerendę - pobierz wizyty dla lekarza
                 $q = $db->prepare("SELECT * FROM appointment WHERE staff_id = ?");
@@ -81,9 +82,10 @@
             die("Błąd pobierania lekarzy z bazy danych");
         }
 
-    
+        
 
     ?>
+   
 </body>
 </html>
 
